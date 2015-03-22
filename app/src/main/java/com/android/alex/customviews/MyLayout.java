@@ -39,7 +39,6 @@ public class MyLayout extends ViewGroup {
                 int top = 100;
                 int left = 0 == i ? 0 : getChildAt(i - 1).getMeasuredWidth();
                 int right = left + childView.getMeasuredWidth();
-                Log.v(TAG, String.valueOf(left));
                 childView.layout(left, top, right, childView.getMeasuredHeight());
             }
         }

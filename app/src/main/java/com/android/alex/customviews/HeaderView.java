@@ -16,17 +16,25 @@ public class HeaderView extends FrameLayout {
 
     private TextView mTitleText;
     private Button mBackBtn;
+    private Button mNextBtn;
 
     public HeaderView(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.header_layout, this);
-        mTitleText = (TextView)findViewById(R.id.tv_title);
-        mBackBtn = (Button)findViewById(R.id.btn_back);
+        mTitleText = (TextView) findViewById(R.id.tv_title);
+        mBackBtn = (Button) findViewById(R.id.btn_back);
         mBackBtn.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                ((Activity)getContext()).finish();
+                ((Activity) getContext()).finish();
+            }
+        });
+        mNextBtn = (Button) findViewById(R.id.btn_Next);
+        mNextBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //do nothing;
             }
         });
     }
@@ -41,5 +49,9 @@ public class HeaderView extends FrameLayout {
 
     public void setBackButtonListener(OnClickListener l) {
         mBackBtn.setOnClickListener(l);
+    }
+
+    public void setNextButtonListener(OnClickListener l) {
+        mNextBtn.setOnClickListener(l);
     }
 }
